@@ -1,0 +1,4 @@
+Name;Host;Datastore;Disk;GestID
+VM1;172.180.0.147;FreeNAS2;20;debian8_64Guest
+VM2;172.180.0.147;FreeNAS2;10;debian8_64Guest
+VM3;172.180.0.147;FreeNAS2;5;debian8_64Guest

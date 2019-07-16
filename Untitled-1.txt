@@ -1,0 +1,57 @@
+Script powershell
+
+--------------
+Création
+--------------
+-Création de 10 VMs
+Se trouve dans un fichier csv (importer le fichier csv)
+(csv créer sous Notepadd++ (pas de ise, pas de excel))
+
+-10 paramètres min pour la vm
+	- 2 vcpu
+	- 1572 mo ram
+	- Disk en tic igger 0
+	- "conseil : mettre des paramètres obligatoires, comme les noms etc)
+
+-Afficher les infos de se csv en anglais avec des couleurs
+'ex  :bonjour, je vais créer un vm de tel nom, avec tant de csv)
+Voulez-vous le faire ? <- Pour chaque actions (chaque vm)
+oui ou non'
+
+-------------------------
+Rapport en anglais
+-------------------------
+-Rapport par mail en html
+-Pour nous : ça a marché, ça n'a pas marché…
+
+-Pour le BOSS :
+Log sous un tableau à la fin de la journée de tous ce qui s'est passé au BOSS
+
+'Bonjour cher patron,
+[Tableau en html ok ko rouge vert]
+Voici…'
+
+-Fichier de logs txt
+' tel utilisateurs a validé tel action
+  envoie de mail
+  création ok '
+
+-Faire des check
+
+-Faire des messages d'erreur en rouge ('Oups, vous avez oubliez…')
+
+-----------------
+Connection
+---------------
+-encryptions des mots passe
+-déconnection (usurpation d'ID, récupération du jeton)
+
+-----------
+Forme
+-----------
+-Commentaire en anglais
+-Lisible
+
+
+
+
