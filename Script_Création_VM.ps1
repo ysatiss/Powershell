@@ -64,6 +64,7 @@ if(Connect-VIServer -Server $ipvcenter)
     Import-Module .\InventoryESXIs.ps1
     Import-Module .\ManagementSSH.ps1
     Import-Module .\SendMail.ps1
+    Import-Module .\ADManage.ps1
     #-------------------------------------------------------------------------#
     #                    Main MENU                                            #
     #-------------------------------------------------------------------------#
@@ -84,7 +85,8 @@ if(Connect-VIServer -Server $ipvcenter)
             Write-Host "3. Inventory of esxi servers `n" -ForegroundColor Yellow
             Write-Host "4. Manage the NTP service`n" -ForegroundColor Yellow
             Write-Host "5. Send the mail to BOSS`n" -ForegroundColor Yellow
-            Write-Host "6. Exit (disconnect) `n" -ForegroundColor Red
+            Write-Host "6. AD Management `n" -ForegroundColor Yellow
+            Write-Host "7. Exit (disconnect) `n" -ForegroundColor Red
             $menuresponse = read-host "Enter Selection "
             Switch ($menuresponse) 
             {
@@ -93,7 +95,8 @@ if(Connect-VIServer -Server $ipvcenter)
                 "3" {menu3}
                 "4" {menu4}
                 "5" {SendMailBoss}
-                "6" {quit}
+                "6" {menuAD}
+                "7" {quit}
             }
         }
         until (1..3 -contains $menuresponse) 
