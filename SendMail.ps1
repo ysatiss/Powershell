@@ -13,7 +13,7 @@ function SendMail {
 
     #AUTHENTICATION PART
     $email = "other.autre.exo@gmail.com" 
-    $pass = "Vmware2019report"
+    $pass = ""
     $smtpServer = "smtp.gmail.com" 
 
     #NEW OBJECT
