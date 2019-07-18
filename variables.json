@@ -1,0 +1,34 @@
+{
+    "vCenter": {
+        "User": "esgi.lab",
+        "Password": "P@ssw0rd",
+        "RRType": "A",
+        "IPv4Address": "10.0.0.120",
+        "Datacenter": "SITE-A",
+        "Cluster": "Cluster-1",
+        "Folder" : "TP-POWERSHELL"
+    },
+    "DNSRecord": {
+        "Zone": "esgi.lab",
+        "Name": "esxi01",
+        "RRType": "A",
+        "IPv4Address": "10.0.0.113"
+    },
+    "ESXi": {
+        "Name": "10.0.0.113",
+        "Server": "10.0.0.120",
+        "IPv4Address": "10.0.0.113",
+        "Datastore1": "FreeNAS1",
+        "Datastore2": "FreeNAS2"
+    },
+    "ComputerAD": {
+        "Name": "esxi01",
+        "SamAccountName": "esxi01",
+        "Path": "CN=Computers,DC=esgi,DC=lab"
+    },
+    "Credential": {
+        "User": "esxi01",
+        "Password": "76492d1116743f0423413b16050a5345MgB8AG4ASQBMAHQAawA4AEsAbgA4AHgASwB2ACsAdQBKAFgAawA0AEYAOAAzAFEAPQA9AHwANAA2AGYANwBmADYAMQA1AGUANgBjADYAYwA2ADcANQAyADkAOQAxADUAOQA5AGQANABjADUAMgBiADYAMgA4ADIAYQBiADUAMgBhAGIAYwBlAGEAMwBjADMAYgAwAGUAZQAxAGIAMwAxADQAZgAwADQAYQA3ADkANwA0ADAAYgA=",
+        "Key": "95, 13, 58, 45, 22, 11, 88, 82, 11, 34, 67, 91, 19, 20, 96, 82"
+    }
+}

@@ -65,6 +65,10 @@ if(Connect-VIServer -Server $ipvcenter)
     Import-Module .\ManagementSSH.ps1
     Import-Module .\SendMail.ps1
     Import-Module .\ADManage.ps1
+    Import-Module .\Create_VM.ps1
+    Import-Module .\Export_Object_JSON.ps1
+    Import-Module .\Manage_dns.ps1
+    Import-Module .\Manage_vCenter.ps1
     #-------------------------------------------------------------------------#
     #                    Main MENU                                            #
     #-------------------------------------------------------------------------#
@@ -86,7 +90,11 @@ if(Connect-VIServer -Server $ipvcenter)
             Write-Host "4. Manage the NTP service`n" -ForegroundColor Yellow
             Write-Host "5. Send the mail to BOSS`n" -ForegroundColor Yellow
             Write-Host "6. AD Management `n" -ForegroundColor Yellow
-            Write-Host "7. Exit (disconnect) `n" -ForegroundColor Red
+            Write-Host "7. Create VM `n" -ForegroundColor Yellow
+            Write-Host "8. Export-Object JSON `n" -ForegroundColor Yellow
+            Write-Host "9. Management DNS `n" -ForegroundColor Yellow
+            Write-Host "10. Management Vcenter`n" -ForegroundColor Yellow
+            Write-Host "11. Exit (disconnect) `n" -ForegroundColor Red
             $menuresponse = read-host "Enter Selection "
             Switch ($menuresponse) 
             {
@@ -96,7 +104,11 @@ if(Connect-VIServer -Server $ipvcenter)
                 "4" {menu4}
                 "5" {SendMailBoss}
                 "6" {menuAD}
-                "7" {quit}
+                "7" {menuCV}
+                "8" {menuE}
+                "9" {menuDNS}
+                "10" {menuV}
+                "11" {quit}
             }
         }
         until (1..3 -contains $menuresponse) 
