@@ -69,6 +69,7 @@ if(Connect-VIServer -Server $ipvcenter)
     Import-Module .\Export_Object_JSON.ps1
     Import-Module .\Manage_dns.ps1
     Import-Module .\Manage_vCenter.ps1
+    $JsonObject = Get-Content .\variables.json | ConvertFrom-Json
     #-------------------------------------------------------------------------#
     #                    Main MENU                                            #
     #-------------------------------------------------------------------------#

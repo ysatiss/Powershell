@@ -8,7 +8,7 @@
 #	Passez le Password en SecureString (Utiliser fonction GeneratePassword)
 #	Créer Groupe AD “Admin-$user” (ou $user = nom de l’utilisateur) 
 
-Import-Module ActiveDirectory
+#Import-Module ActiveDirectory
 function menuAD
 {
     do
@@ -19,7 +19,7 @@ function menuAD
         Write-Host "#################################" -ForegroundColor Yellow `n
 
         Write-Host "1. CREATE USER "`n -ForegroundColor Yellow
-        Write-Host "2. RETOUR MENU PRINCIPAL" `n -ForegroundColor Yellow
+        Write-Host "2. RETOUR MENU PRINCIPAL" `n -ForegroundColor Red
         $menuresponse = read-host [Enter Selection]
         Switch ($menuresponse) {
             "1" {OptionAD.1}    
@@ -78,8 +78,9 @@ $usercheck = Get-ADUser -Filter {Name -like $myuser}
         -AccountPassword (Read-Host -AsSecureString "Input Password") -Enabled $True
         
         New-ADGroup -Name "Admin-toto-00" -groupscope "Global"
-	}
-    menu4
+    }
+    Read-Host = "[ENTER]"
+    Menu
 }
 
 

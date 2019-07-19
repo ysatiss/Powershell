@@ -9,7 +9,26 @@
 #Créer un Computer AD en se basant sur le nom de l’ESXi
 #Si le computer AD existe le supprimer et le recréer
 
-function menuDNS 
+
+function menuDNS
+{
+    do
+    {
+        clear-host chcp 1252
+        Write-Host "#################################" -ForegroundColor DarkCyan
+        Write-Host "##         VCenter MODE        ##" -ForegroundColor DarkCyan
+        Write-Host "#################################" -ForegroundColor DarkCyan `n
+
+        Write-Host "1. CREATE NEW INFRA via JSON "`n -ForegroundColor Yellow
+        Write-Host "2. RETOUR MENU PRINCIPAL" `n -ForegroundColor Red
+        $menuresponse = read-host [Enter Selection]
+        Switch ($menuresponse) {
+            "1" {OptionDNS.1}    
+            "2" {Menu}
+        }
+    } until (1..3 -contains $menuresponse) 
+}
+function OptionDNS.1
 {
     $JsonObject = Get-Content .\variables.json | ConvertFrom-Json
 
@@ -45,5 +64,6 @@ function menuDNS
             Start-Sleep -s 2
             New-ADComputer -Name $JsonObject.ComputerAD.Name -SamAccountName $JsonObject.ComputerAD.SamAccountName -Path $JsonObject.ComputerAD.Path # Create esxi01 ComputerAD
     }
+    Read-Host = "[ENTER]"
     Menu
 }

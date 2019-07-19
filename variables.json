@@ -3,21 +3,21 @@
         "User": "esgi.lab",
         "Password": "P@ssw0rd",
         "RRType": "A",
-        "IPv4Address": "10.0.0.120",
+        "IPv4Address": "172.180.0.150",
         "Datacenter": "SITE-A",
         "Cluster": "Cluster-1",
-        "Folder" : "TP-POWERSHELL"
+        "Folder" : "Datacenters"
     },
     "DNSRecord": {
         "Zone": "esgi.lab",
         "Name": "esxi01",
         "RRType": "A",
-        "IPv4Address": "10.0.0.113"
+        "IPv4Address": "172.180.0.148"
     },
     "ESXi": {
-        "Name": "10.0.0.113",
-        "Server": "10.0.0.120",
-        "IPv4Address": "10.0.0.113",
+        "Name": "172.180.0.148",
+        "Server": "172.180.0.150",
+        "IPv4Address": "172.180.0.148",
         "Datastore1": "FreeNAS1",
         "Datastore2": "FreeNAS2"
     },

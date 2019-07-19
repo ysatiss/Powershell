@@ -9,13 +9,13 @@ function menu4
     {
         clear-host chcp 1252
         Write-Host "#################################" -ForegroundColor DarkGray
-        Write-Host "##         INVENTORY MODE      ##" -ForegroundColor DarkGray
+        Write-Host "##         NTP MODE            ##" -ForegroundColor DarkGray
         Write-Host "#################################" -ForegroundColor DarkGray `n
 
         Write-Host "1. STATUS SERVICE NTP "`n -ForegroundColor Yellow
         Write-Host "2. MISE EN PLACE SERVICE NTP"`n -ForegroundColor Yellow
         Write-Host "3. SUPPRESSION SERVICE NTP" `n -ForegroundColor Yellow
-        Write-Host "4. RETOUR MENU PRINCIPAL" `n -ForegroundColor Yellow
+        Write-Host "4. RETOUR MENU PRINCIPAL" `n -ForegroundColor Red
         $menuresponse = read-host [Enter Selection]
         Switch ($menuresponse) {
             "1" {Option4.1}
@@ -36,6 +36,7 @@ function Option4.1
 {
         #STATUS NTP
         Get-VMHost | Sort-Object Name | Select-Object Name, @{N="NTPServer";E={$_ |Get-VMHostNtpServer}}, @{N="ServiceRunning";E={(Get-VmHostService -VMHost $_ | Where-Object {$_.key-eq "ntpd"}).Running}}
+        Read-Host = "[ENTER]"
     menu4
 }
 

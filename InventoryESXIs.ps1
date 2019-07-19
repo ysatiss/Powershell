@@ -18,7 +18,7 @@ function menu3
         Write-Host "2. INVENTORY ESXI"`n -ForegroundColor Yellow
         Write-Host "3. INVENTORY NETWORK" `n -ForegroundColor Yellow
         Write-Host "4. INVENTORY VM" `n -ForegroundColor Yellow
-        Write-Host "5. BACK TO THE MAIN MENU" `n -ForegroundColor Cyan
+        Write-Host "5. BACK TO THE MAIN MENU" `n -ForegroundColor Red
         $menuresponse = read-host [Enter Selection]
         Switch ($menuresponse) {
             "1" {Option3.1}
